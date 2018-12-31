@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit - Etat hébergement{% endblock %}
+
+{% block body %}
+    <div class="form-inline text-right my-5">
+        <h1 class="mr-auto">Edit Etat hébergement</h1>
+        {{ include('status_acco/_delete_form.html.twig') }}
+    </div>
+
+    {{ include('status_acco/_form.html.twig', {'button_label': 'Update'}) }}
+    
+    <div class="text-right my-5">
+        <a href="{{ path('status_acco_index') }}" class="btn">back to list</a>
+    </div>
+
+{% endblock %}

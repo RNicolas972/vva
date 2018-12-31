@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ controller_name }}{% endblock %}
+
+{% block body %}
+    <h1 class="my-5">Hébergements</h1>
+
+    <div class="card-deck">
+        {% for accommodation in accommodations %}
+        <div class="card col-4">
+            <div class="row">           
+                <div class="col p-0">
+                    <img src="https://s.iha.com/2520600030446/Locations-vacances-Serre-chevalier-1400-villeneuve-Chalet_30.jpeg" class="img-fluid"/>
+                </div>
+                <div class="col p-2">
+                    <h4>{{ accommodation.name }}</h4>
+                    <p>
+                        <span>For {{ accommodation.numbPlace }}/prs</span><br />
+                        <span>Surface: {{ accommodation.surface }}m²</span>
+                    </p>
+                    <h5 class="text-right">{{ accommodation.priceWeek }}€</h5>
+                </div>
+            </div>
+        </div>
+        {% else %}
+            <h1>No journey found</h1>
+        {% endfor %}
+    </div>
+{% endblock %}

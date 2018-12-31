@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New TypeAcco{% endblock %}
+
+{% block body %}
+    <h1>Create new TypeAcco</h1>
+
+    {{ include('type_acco/_form.html.twig') }}
+
+    <a href="{{ path('type_acco_index') }}">back to list</a>
+{% endblock %}

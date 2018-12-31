@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit TypeAcco{% endblock %}
+
+{% block body %}
+    <h1>Edit TypeAcco</h1>
+
+    {{ include('type_acco/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('type_acco_index') }}">back to list</a>
+
+    {{ include('type_acco/_delete_form.html.twig') }}
+{% endblock %}

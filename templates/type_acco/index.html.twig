@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeAcco index{% endblock %}
+
+{% block body %}
+    <h1>TypeAcco index</h1>
+
+    <table class="table table-hover table-sm my-5">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th class="text-right px-5">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_acco in type_accos %}
+            <tr>
+                <td class="align-middle">{{ type_acco.id }}</td>
+                <td class="align-middle">{{ type_acco.name }}</td>
+                <td class="text-right">
+                    <a href="{{ path('type_acco_show', {'id': type_acco.id}) }}" class="btn btn-sm btn-info">show</a>
+                    <a href="{{ path('type_acco_edit', {'id': type_acco.id}) }}" class="btn btn-sm btn-warning">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('type_acco_new') }}" class="btn btn-success">+ Create new</a>
+{% endblock %}
