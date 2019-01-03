@@ -3,37 +3,39 @@
 {% block title %}Gestion - Accommodation{% endblock %}
 
 {% block body %}
-    <div class="form-inline text-right">
-        <h1 class="mr-auto">{{ accommodation.name }}</h1>
-        <a href="{{ path('accommodation_edit', {'id': accommodation.id}) }}" class="btn btn-sm btn-warning mx-1">edit</a>
-        {{ include('accommodation/_delete_form.html.twig') }}
-    </div>
+    <div class="container">
+        <div class="form-inline text-right">
+            <h1 class="mr-auto">{{ accommodation.name }}</h1>
+            <a href="{{ path('accommodation_edit', {'id': accommodation.id}) }}" class="btn btn-sm btn-warning mx-1">edit</a>
+            {{ include('accommodation/_delete_form.html.twig') }}
+        </div>
 
-    <table class="table my-5">
-        <tbody>
-            <tr>
-                <th>NumbPlace</th>
-                <td>{{ accommodation.numbPlace }}</td>
-            </tr>
-            <tr>
-                <th>Surface</th>
-                <td>{{ accommodation.surface }}</td>
-            </tr>
-            <tr>
-                <th>Internet</th>
-                <td>{{ accommodation.internet ? 'Yes' : 'No' }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ accommodation.description }}</td>
-            </tr>
-            <tr>
-                <th>PriceWeek</th>
-                <td>{{ accommodation.priceWeek }}</td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="text-right">
-        <a href="{{ path('accommodation_index') }}" class="btn">back to list</a>
+        <table class="table my-5">
+            <tbody>
+                <tr>
+                    <th>NumbPlace</th>
+                    <td>{{ accommodation.numbPlace }}</td>
+                </tr>
+                <tr>
+                    <th>Surface</th>
+                    <td>{{ accommodation.surface }}</td>
+                </tr>
+                <tr>
+                    <th>Internet</th>
+                    <td>{{ accommodation.internet ? 'Yes' : 'No' }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ accommodation.description }}</td>
+                </tr>
+                <tr>
+                    <th>PriceWeek</th>
+                    <td>{{ accommodation.priceWeek }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-right">
+            <a href="{{ path('accommodation_index') }}" class="btn">back to list</a>
+        </div>
     </div>
 {% endblock %}

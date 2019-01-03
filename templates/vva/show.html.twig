@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ accommodation.name }}{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <ul class="nav my-3">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Library</a></li>
+            <li class="active">Data</li>
+        </ul>
+    </div>
+    <div class="card mb-5">
+        <div class=" row p-0">           
+            <img src="https://s.iha.com/2520600030446/Locations-vacances-Serre-chevalier-1400-villeneuve-Chalet_30.jpeg" class="img-fluid col-5"/> 
+            <div class="col py-3">
+                <h4>
+                    <span class="text-uppercase">{{ accommodation.name }}</span><br>
+                    <span>{{ accommodation.typeAcco.name }}</span>
+                </h4>     
+                <hr class="mb-0">
+
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-3">
+                        <div class="bg-success p-1 mb-1">
+                            <span>Dès</span>
+                            <h3>{{ accommodation.priceWeek }}€</h3>
+                        </div>
+                        <div class="bg-danger p-1 mb-1">
+                            <a href="" class="text-light w-100">Voir les tarifs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-3" style="box-shadow: 0 -5px 5px -5px rgba(0,0,0,0.12)">
+        <div class="card bg-primary text-light">
+            <div class="card-body">
+                <div class="form-inline">
+                    <h5 class="mr-5 m-0 text-uppercase">Modifiez vos cirtères </h5>
+                    <input type="date" class="form-control">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

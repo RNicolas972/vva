@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Accommodation;
 use App\Repository\AccommodationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -27,6 +28,16 @@ class VvaController extends AbstractController
         return $this->render('vva/journey.html.twig', [
             'controller_name' => 'Journey',
             'accommodations' => $accommodationRepository->findAll()
+        ]);
+    }
+
+    /**
+     * @Route("/journey/{name}", name="journey_show", methods={"GET"})
+     */
+    public function show(Accommodation $accommodation): Response
+    {
+        return $this->render('vva/show.html.twig', [
+            'accommodation' => $accommodation,
         ]);
     }
 }

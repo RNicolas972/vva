@@ -7,21 +7,13 @@
 
     <div class="card-deck">
         {% for accommodation in accommodations %}
-        <div class="card col-4">
-            <div class="row">           
-                <div class="col p-0">
-                    <img src="https://s.iha.com/2520600030446/Locations-vacances-Serre-chevalier-1400-villeneuve-Chalet_30.jpeg" class="img-fluid"/>
-                </div>
-                <div class="col p-2">
-                    <h4>{{ accommodation.name }}</h4>
-                    <p>
-                        <span>For {{ accommodation.numbPlace }}/prs</span><br />
-                        <span>Surface: {{ accommodation.surface }}m²</span>
-                    </p>
-                    <h5 class="text-right">{{ accommodation.priceWeek }}€</h5>
-                </div>
+        <a href="{{ path('journey_show', {'name': accommodation.name}) }}" class="card col-3 p-0" style="text-decoration: none">
+            <img src="https://s.iha.com/2520600030446/Locations-vacances-Serre-chevalier-1400-villeneuve-Chalet_30.jpeg" class="img-fluid"/>
+            <div class="mt-2 px-3 text-primary">
+                <h4>{{ accommodation.name }}</h4>
+                <h4 class="text-right text-danger"><small>dès</small> {{ accommodation.priceWeek }}€</h4>
             </div>
-        </div>
+        </a>
         {% else %}
             <h1>No journey found</h1>
         {% endfor %}

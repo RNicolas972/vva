@@ -53,7 +53,7 @@ class Reservation
 
     public function setReservationDate(\DateTimeInterface $reservationDate): self
     {
-        $this->reservationDate = $reservationDate;
+        $this->reservationDate = new \DateTime();
 
         return $this;
     }

@@ -3,39 +3,41 @@
 {% block title %}Gestion - Hébergements{% endblock %}
 
 {% block body %}
-    <h1>Hébergements</h1>
+    <div class="container">
+        <h1>Hébergements</h1>
 
-    <table class="table table-sm table-hover my-5">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>NumbPlace</th>
-                <th>Surface</th>
-                <th>Tarif/Semaine</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for accommodation in accommodations %}
-            <tr >
-                <td class="align-middle">{{ accommodation.id }}</td>
-                <td class="align-middle">{{ accommodation.name }}</td>
-                <td class="align-middle">{{ accommodation.numbPlace }}</td>
-                <td class="align-middle">{{ accommodation.surface }}</td>
-                <td class="align-middle">{{ accommodation.priceWeek }}€</td>
-                <td>
-                    <a href="{{ path('accommodation_show', {'id': accommodation.id}) }}" class="btn btn-sm btn-info">show</a>
-                    <a href="{{ path('accommodation_edit', {'id': accommodation.id}) }}" class="btn btn-sm btn-warning">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="8">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table table-sm table-hover my-5">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>NumbPlace</th>
+                    <th>Surface</th>
+                    <th>Tarif/Semaine</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for accommodation in accommodations %}
+                <tr >
+                    <td class="align-middle">{{ accommodation.id }}</td>
+                    <td class="align-middle">{{ accommodation.name }}</td>
+                    <td class="align-middle">{{ accommodation.numbPlace }}</td>
+                    <td class="align-middle">{{ accommodation.surface }}</td>
+                    <td class="align-middle">{{ accommodation.priceWeek }}€</td>
+                    <td>
+                        <a href="{{ path('accommodation_show', {'id': accommodation.id}) }}" class="btn btn-sm btn-info">show</a>
+                        <a href="{{ path('accommodation_edit', {'id': accommodation.id}) }}" class="btn btn-sm btn-warning">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
 
-    <a href="{{ path('accommodation_new') }}" class="btn btn-success">+ Create new</a>
+        <a href="{{ path('accommodation_new') }}" class="btn btn-success mt-5">+ Create new</a>
+    </div>
 {% endblock %}
